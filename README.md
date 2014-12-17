@@ -17,16 +17,22 @@ Detailed descriptions of the source data are available
 ## Data Cleanup
 The script run\_analysis.R cleans up the data via the following steps:
 
-1. Merges the training and the test sets to create one data set.
+1. Loads the training (`train/X_train.txt`) and test (`test/X_test.txt`) 
+measurements
 
 2. Extracts only the measurements on the mean and standard deviation for each 
-measurement. 
+measurement using the feature names in `features.txt`
 
-3. Uses descriptive activity names to name the activities in the data set
+3. Loads the subject data from `train/subject_train.txt` and 
+`test\subject_test.txt`, and combines it with the measurements
 
-4. Appropriately labels the data set with descriptive variable names. 
+4. Loads the activity identifier from `train/y_train.txt` and `test/y_test.txt`
+and combines it with the measurements
 
-5. From the data set in step 4, creates a second, independent tidy data set 
+5. Loads the activity labels from `activity_labels.txt` and combines it with 
+the measurements to ensure that the activity has a friendly label
+
+6. From the data set in step 5, creates a second, independent tidy data set 
 with the average of each variable for each activity and each subject.
 
 ## Code Book
