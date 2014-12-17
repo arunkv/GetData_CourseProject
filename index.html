@@ -1,45 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Getdata courseproject by arunkv</title>
+    <meta name="description" content="GetData_CourseProject : Course project for the Coursera course &quot;Getting and Cleaning Data&quot;">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>GetData_CourseProject</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Getdata courseproject</h1>
-        <p>Coursera course &quot;Getting and Cleaning Data&quot; - Course project</p>
 
-        <p class="view"><a href="https://github.com/arunkv/GetData_CourseProject">View the Project on GitHub <small>arunkv/GetData_CourseProject</small></a></p>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/arunkv/GetData_CourseProject">View on GitHub</a>
 
+          <h1 id="project_title">GetData_CourseProject</h1>
+          <h2 id="project_tagline">Course project for the Coursera course &quot;Getting and Cleaning Data&quot;</h2>
 
-        <ul>
-          <li><a href="https://github.com/arunkv/GetData_CourseProject/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/arunkv/GetData_CourseProject/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/arunkv/GetData_CourseProject">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/arunkv/GetData_CourseProject/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/arunkv/GetData_CourseProject/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <h1>
 <a id="getdata_courseproject" class="anchor" href="#getdata_courseproject" aria-hidden="true"><span class="octicon octicon-link"></span></a>GetData_CourseProject</h1>
 
 <blockquote>
-<p>Copyright 2014 Arun K Viswanathan
+<p>Copyright 2014 Arun K Viswanathan.
 All rights reserved</p>
 </blockquote>
 
 <h2>
 <a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
 
-<p>Course project for the Coursera course <em>Getting and Cleaning Data</em>
+<p>Course project for the Coursera course <em>Getting and Cleaning Data</em>.
 See <a href="https://class.coursera.org/getdata-016/human_grading/view/courses/973758/assessments/3/submissions">instructions here</a></p>
 
 <h2>
@@ -56,12 +59,17 @@ Detailed descriptions of the source data are available
 <p>The script run_analysis.R cleans up the data via the following steps:</p>
 
 <ol>
-<li><p>Merges the training and the test sets to create one data set.</p></li>
+<li><p>Loads the training (<code>train/X_train.txt</code>) and test (<code>test/X_test.txt</code>) 
+measurements</p></li>
 <li><p>Extracts only the measurements on the mean and standard deviation for each 
-measurement. </p></li>
-<li><p>Uses descriptive activity names to name the activities in the data set</p></li>
-<li><p>Appropriately labels the data set with descriptive variable names. </p></li>
-<li><p>From the data set in step 4, creates a second, independent tidy data set 
+measurement using the feature names in <code>features.txt</code></p></li>
+<li><p>Loads the subject data from <code>train/subject_train.txt</code> and 
+<code>test/subject_test.txt</code>, and combines it with the measurements</p></li>
+<li><p>Loads the activity identifier from <code>train/y_train.txt</code> and <code>test/y_test.txt</code>
+and combines it with the measurements</p></li>
+<li><p>Loads the activity labels from <code>activity_labels.txt</code> and combines it with 
+the measurements to ensure that the activity has a friendly label</p></li>
+<li><p>From the data set in step 5, creates a second, independent tidy data set 
 with the average of each variable for each activity and each subject.</p></li>
 </ol>
 
@@ -71,12 +79,16 @@ with the average of each variable for each activity and each subject.</p></li>
 <p>The code book describing the tidy data produced is in CodeBook.md. Portions of
 the code book are generated using R code in the generate_codebook.R script.</p>
       </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/arunkv">arunkv</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">GetData_CourseProject maintained by <a href="https://github.com/arunkv">arunkv</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -87,6 +99,7 @@ the code book are generated using R code in the generate_codebook.R script.</p>
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
+
 
   </body>
 </html>
