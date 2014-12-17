@@ -6,12 +6,11 @@ Code Book for Tidy Data
 
 ## Overview
 
-This document describes the tidy data produced by the script run\_analysis.R. 
-See README.md for details of the data source and the cleanups performed on the
+This document describes the tidy data produced by the script `run_analysis.R`. 
+See `README.md` for details of the data source and the cleanups performed on the
 source data.
 
 ## Code Book
-```{r}
-print("Hello World")
-source("generate_codebook.R")
-```
+
+Column Name | Description
+----------- | -----------

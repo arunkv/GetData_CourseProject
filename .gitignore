@@ -13,4 +13,9 @@
 # The data
 UCI\ HAR\ Dataset
 
+# Markdown to HTML files
 *.html
+
+# Generated tidy data
+measurements.txt
+

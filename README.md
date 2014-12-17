@@ -6,7 +6,7 @@ GetData\_CourseProject
 
 ## Overview
 Course project for the Coursera course *Getting and Cleaning Data*.
-See [instructions here](https://class.coursera.org/getdata-016/human_grading/view/courses/973758/assessments/3/submissions)
+See [instructions here](https://class.coursera.org/getdata-016/human_grading/view/courses/973758/assessments/3/submissions).
 
 ## Data Source
 The source data was obtained from 
@@ -15,7 +15,7 @@ Detailed descriptions of the source data are available
 [here](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 
 ## Data Cleanup
-The script run\_analysis.R cleans up the data via the following steps:
+The script `run_analysis.R` cleans up the data via the following steps:
 
 1. Loads the training (`train/X_train.txt`) and test (`test/X_test.txt`) 
 measurements
@@ -33,9 +33,16 @@ and combines it with the measurements
 the measurements to ensure that the activity has a friendly label
 
 6. From the data set in step 5, creates a second, independent tidy data set 
-with the average of each variable for each activity and each subject.
+with the average of each variable for each activity and each subject
+
+7. Saves the data to a file in the local directory called `measurements.txt`
 
 ## Code Book
-The code book describing the tidy data produced is in CodeBook.md. Portions of
-the code book are generated using R code in the generate\_codebook.R script.
+The code book describing the tidy data produced is in `CodeBook.md`.
 
+## Reading Tidy Data
+The tidy data produced by running `run_analysis.R` can be read using the
+following block of code:
+```
+measurements <- read.table("measurements.txt")
+```
