@@ -1,11 +1,11 @@
 GetData\_CourseProject
 =====================
 
-> Copyright 2014 Arun K Viswanathan
+> Copyright 2014 Arun K Viswanathan.
 > All rights reserved
 
 ## Overview
-Course project for the Coursera course *Getting and Cleaning Data*
+Course project for the Coursera course *Getting and Cleaning Data*.
 See [instructions here](https://class.coursera.org/getdata-016/human_grading/view/courses/973758/assessments/3/submissions)
 
 ## Data Source
@@ -24,7 +24,7 @@ measurements
 measurement using the feature names in `features.txt`
 
 3. Loads the subject data from `train/subject_train.txt` and 
-`test\subject_test.txt`, and combines it with the measurements
+`test/subject_test.txt`, and combines it with the measurements
 
 4. Loads the activity identifier from `train/y_train.txt` and `test/y_test.txt`
 and combines it with the measurements
