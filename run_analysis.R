@@ -35,66 +35,72 @@ dataDir <- "./UCI HAR Dataset/"
 # Load the training feature names and eliminate special characters like 
 # parantheses, commas and dashes, in the name. Also fix typos like "BodyBody"
 features <- read.table(paste0(dataDir, "features.txt"),
-                       col.names = c("feature.id", "orig.feature.name"))
-features$feature.name <- features$orig.feature.name
-features$feature.name <- gsub("\\(\\)", "", features$feature.name)
-features$feature.name <- gsub("\\(", ".", features$feature.name)
-features$feature.name <- gsub("\\)", "", features$feature.name)
-features$feature.name <- gsub(",", ".", features$feature.name)
-features$feature.name <- gsub("-", ".", features$feature.name)
-features$feature.name <- gsub("BodyBody", "Body", features$feature.name)
+                       col.names = c("feature_id", "orig_feature_name"))
+features$feature_name <- features$orig_feature_name
+features$feature_name <- gsub("\\(\\)", "", features$feature_name)
+features$feature_name <- gsub("\\(", "_", features$feature_name)
+features$feature_name <- gsub("\\)", "", features$feature_name)
+features$feature_name <- gsub(",", "_", features$feature_name)
+features$feature_name <- gsub("-", "_", features$feature_name)
+features$feature_name <- gsub("BodyBody", "Body", features$feature_name)
 
 # Get the set of features that are of interest to us - mean and std 
 # Note: It is assumed that variables like "angle(X,gravityMean)" are not means;
 #       hence a case-sensitive search
-featuresOfInterest <- c(grep("mean", features$feature.name, value=TRUE), 
-                        grep("std", features$feature.name, value=TRUE))
+featuresOfInterest <- c(grep("mean", features$feature_name, value=TRUE), 
+                        grep("std", features$feature_name, value=TRUE))
 
 # Load the training data and label the columns with the training feature names
 # Only keep the features of interest
 trainingData <- read.table(paste0(dataDir,"train/X_train.txt"),
-                           col.names = features$feature.name)
+                           col.names = features$feature_name)
 trainingData <- trainingData[, featuresOfInterest]
 
 # Load the training subjects
 trainingSubjects <- read.table(paste0(dataDir, "train/subject_train.txt"),
-                               col.names = "subject.id")
+                               col.names = "subject_id")
 
-# Load the training labels
-trainingLabels <- read.table(paste0(dataDir, "train/y_train.txt"),
-                             col.names = "activity.id")
+# Load the training activity IDs
+trainingActivities <- read.table(paste0(dataDir, "train/y_train.txt"),
+                                 col.names = "activity_id")
 
 # Combine the training data with the subject and the activity ID
-combinedTrainingData <- cbind(trainingData, trainingSubjects, trainingLabels)
+combinedTrainingData <- cbind(trainingData, trainingSubjects, trainingActivities)
 
 # Load the test data and label the columns with the training feature names
 # Only keep the features of interest
 testData <- read.table(paste0(dataDir,"test/X_test.txt"),
-                       col.names = features$feature.name)
+                       col.names = features$feature_name)
 testData <- testData[, featuresOfInterest]
 
 # Load the test subjects
 testSubjects <- read.table(paste0(dataDir, "test/subject_test.txt"),
-                           col.names = "subject.id")
+                           col.names = "subject_id")
 
-# Load the test labels
-testLabels <- read.table(paste0(dataDir, "test/y_test.txt"),
-                         col.names = "activity.id")
+# Load the test activities
+testActivities <- read.table(paste0(dataDir, "test/y_test.txt"),
+                             col.names = "activity_id")
 
 # Combine the test data with the subject and the activity ID
-combinedTestData <- cbind(testData, testSubjects, testLabels)
+combinedTestData <- cbind(testData, testSubjects, testActivities)
 
 # Combine the tidy training and test data
 combinedData <- rbind(combinedTrainingData, combinedTestData)
 
-# Load the activity labels and merge them with the tidy data
+# Load the activity labels and merge them with the tidy data, removing the 
+# activity ID in the process
 activityLabels <- read.table(paste0(dataDir, "activity_labels.txt"),
-                             col.names = c("activity.id", "activity.label"))
-combinedData <- merge(activityLabels, combinedData, by = "activity.id")
+                             col.names = c("activity_id", "activity_name"))
+combinedData <- merge(activityLabels, combinedData, by = "activity_id")
+combinedData$activity_id <- NULL
 
-# TODO: From the data set in step 4, creates a second, independent tidy data 
-#       set with the average of each variable for each activity and each subject
+# Creates a second, independent tidy data set with the average of each variable
+# for each activity and each subject
+library(dplyr)
+tidyData <- tbl_df(combinedData) %>%    
+    group_by(activity_name, subject_id) %>%
+    summarise_each(funs(mean))
 
 # Write out the tidy data to measurements.txt in the current directory
-write.table(combinedData, file="measurements.txt", row.names=FALSE)
+write.table(tidyData, file="measurements.txt", row.names=FALSE)
 
