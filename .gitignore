@@ -11,7 +11,7 @@
 .Rproj.user/
 
 # The data
-UCI\ HAR\ Dataset
+UCI\ HAR\ Dataset/
 
 # Markdown to HTML files
 *.html
