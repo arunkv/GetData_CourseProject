@@ -60,28 +60,28 @@ tGravityAccMag_mean |  Mean body acceleration mag in the time domain
 tBodyAccJerkMag_mean |  Mean body acceleration jerk mag in the time domain
 tBodyGyroMag_mean |  Mean body gyroscope mag in the time domain
 tBodyGyroJerkMag_mean |  Mean body gyroscope jerk mag in the time domain
-fBodyAcc_mean_X |  TODO
-fBodyAcc_mean_Y |  TODO
-fBodyAcc_mean_Z |  TODO
-fBodyAcc_meanFreq_X |  TODO
-fBodyAcc_meanFreq_Y |  TODO
-fBodyAcc_meanFreq_Z |  TODO
-fBodyAccJerk_mean_X |  TODO
-fBodyAccJerk_mean_Y |  TODO
-fBodyAccJerk_mean_Z |  TODO
-fBodyAccJerk_meanFreq_X |  TODO
-fBodyAccJerk_meanFreq_Y |  TODO
-fBodyAccJerk_meanFreq_Z |  TODO
-fBodyGyro_mean_X |  TODO
-fBodyGyro_mean_Y |  TODO
-fBodyGyro_mean_Z |  TODO
-fBodyGyro_meanFreq_X |  TODO
-fBodyGyro_meanFreq_Y |  TODO
-fBodyGyro_meanFreq_Z |  TODO
-fBodyAccMag_mean |  TODO
-fBodyAccMag_meanFreq |  TODO
-fBodyAccJerkMag_mean |  TODO
-fBodyAccJerkMag_meanFreq |  TODO
+fBodyAcc_mean_X |  Mean body acceleration along X axis in the frequency domain
+fBodyAcc_mean_Y |  Mean body acceleration along Y axis in the frequency domain
+fBodyAcc_mean_Z |  Mean body acceleration along Z axis in the frequency domain
+fBodyAcc_meanFreq_X |  Mean frequency of body acceleration along X axis in the frequency domain
+fBodyAcc_meanFreq_Y |  Mean frequency of body acceleration along Y axis in the frequency domain
+fBodyAcc_meanFreq_Z |  Mean frequency of body acceleration along Z axis in the frequency domain
+fBodyAccJerk_mean_X |  Mean body acceleration jerk along X axis in the frequency domain
+fBodyAccJerk_mean_Y |  Mean body acceleration jerk along Y axis in the frequency domain
+fBodyAccJerk_mean_Z |  Mean body acceleration jerk along Z axis in the frequency domain
+fBodyAccJerk_meanFreq_X |  Mean frequency of body acceleration jerk along X axis in the frequency domain
+fBodyAccJerk_meanFreq_Y |  Mean frequency of body acceleration jerk along Y axis in the frequency domain
+fBodyAccJerk_meanFreq_Z |  Mean frequency of body acceleration jerk along Z axis in the frequency domain
+fBodyGyro_mean_X |  Mean body gyroscope along X axis in the frequency domain
+fBodyGyro_mean_Y |  Mean body gyroscope along Y axis in the frequency domain
+fBodyGyro_mean_Z |  Mean body gyroscope along Z axis in the frequency domain
+fBodyGyro_meanFreq_X |  Mean frequency of body gyroscope along X axis in the frequency domain
+fBodyGyro_meanFreq_Y |  Mean frequency of body gyroscope along Y axis in the frequency domain
+fBodyGyro_meanFreq_Z |  Mean frequency of body gyroscope along Z axis in the frequency domain
+fBodyAccMag_mean |  Mean body acceleration mag in the frequency domain
+fBodyAccMag_meanFreq |  Mean frequency of body acceleration mag in the frequency domain
+fBodyAccJerkMag_mean |  Mean body acceleration jerk mag in the frequency domain
+fBodyAccJerkMag_meanFreq |  Mean frequency of body acceleration jerk mag in the frequency domain
 fBodyGyroMag_mean |  TODO
 fBodyGyroMag_meanFreq |  TODO
 fBodyGyroJerkMag_mean |  TODO
